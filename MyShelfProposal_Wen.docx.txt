@@ -1,0 +1,174 @@
+﻿Must have list[a]
+http://whatshouldireadnext.com/
+http://www.pastemagazine.com/blogs/lists/2014/03/top-10-most-beautifully-designed-apps.html omg they’re so question
+1. Keyword (Same algorithm[b](might have slight modifications depending on UI)this one is more specified[c])[d][e]
+* Need  a number of different keywords
+* Needs user to press keywords
+* Keywords need to correspond with tags given to books
+* Must give back a list of books
+* Different from Book Recommendation because here, the user can pick a book depending on what they want to read at the specific time. [f]
+Browse Books[g]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Proposal!
+
+
+Problem: 
+- often times people find it difficult to find books to read next
+- most websites do not have recommendation systems[h] that are based off of preference, instead they are based off of rating.
+
+
+Solution:
+- focus more on recommendations for user and have a more simple and modern look
+
+
+- implement a search based on keywords/tags that can either be based on previous books user has read or a specific search of tags (8tracks format)[i]
+
+
+
+
+Implementation:
+- Backend:JavaScript/Jquery ,Database
+- UI: HTML, CSS
+- API:Goodreads[j]
+
+
+
+
+
+
+
+
+
+
+Design Documents
+Use Case:
+- To utilize Book Recommendation Algorithm based on book title inputted by user:
+1. Display input section where user can type in book titles of recent books read or ones they liked        
+2. User presses submit button once done inputting books
+3. A search of books based on the tags each book inputted has is done and a list of most similar books is generated
+        4. Display recommendation list 
+
+
+Components:
+Book database, Tag/Search system to generate recommendations
+- First Page/Survey
+* Input Bars of preferred book titles
+* Submit Button → conducts search
+* Display of recommendation list
+* Do not read list
+- User Search 
+* Display of all keywords books are tagged with
+* User can select a few of these keywords 
+* User presses submit button → conducts search
+* Display of result list based on books that contain selected keywords
+
+
+Risk Assessment:
+- Book recommendations may not be the most accurate as tag system may be difficult to implement[k]
+-Using the tag system to make recommendations might be a huge component that can take a lot of time. [l] If this happens:(eliminate it )
+
+
+Possible API
+* Google Books: https://developers.google.com/books/?csw=1
+* GoodReads
+* Barnes and Noble Price Retriever 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------
+fluff
+    2 ½. Be able to click the book and see info
+1. Current Reads List
+[m]
+Calendar to organize reading schedule
+
+
+1.  Book Recommendation Algorithm(Backend-JS/JQuery)
+* User inputs favorite genre, three favorite books, etc[n](on second page of website).
+* After this, computer will recommend like twenty books[o][p]. 
+* Will give books not to read as well[q]. 
+* If you click a book, there’s a specific book format.
+[r][s]
+
+
+
+[a]This must have list is WAY too long for the amount of time you have to complete this project. Pick one of these and develop it further (more details about the current feature - not more things to do with it). The rest can be things you do once that is completed. What you have here would take me 6 months to implement with a 4 person group of graduate students.
+[b]What algorithm? You haven't told me what your set of steps is yet.
+[c]What does this mean?
+[d]I think we consider making #2 our priority because it may be a little easier you know ? idk we'll discuss haha
+[e]but it has its pros and cons
+[f]I am not sure what this section means. Please be more clear about what you are trying to do with keywords. Or if you are unclear, eliminate this section. #1 is already a lot to accomplish in 6 days!
+[g]These two combined seem to be the most realistic goals for the time we have. If you have time I would add #2-1/2 and/or #6. The other options seem really hard to me.
+[h]Recommendations are really hard. Netflix created competition that awarded $1 million to improve their recommendations of movies by 10% (this is similar your book recommendation problem). It took 3 years of the competition before a team of 7 people (most with their PhDs) to accomplish this task. Check it out here: http://en.wikipedia.org/wiki/Netflix_Prize
+
+
+I don't say this to discourage you, but to help you realize that this is a VERY lofty goal. And I think scaling down is important for your group's success.
+[i]I am not sure what you mean by this.
+[j]Internet is not an API. Now is the time to iron out ALL your details. Choose the API that you will use - I suggest you try to find the one that is the most simple to setup.
+[k]You should include what you will do if this risk becomes a reality. How will your group proceed if this happens?
+[l]You should include what you will do if this risk becomes a reality. How will your group proceed if this happens?
+[m]These two combined seem to be the most realistic goals for the time we have. If you have time I would add #2-1/2 and/or #6. The other options seem really hard to me.
+[n]There should be no etc in this document. This is the time to decide what goes in this part and what doesn't.
+[o]How will the computer do this? Computers are stupid, remember!!
+[p]What algorithm will you use to determine book recommendations. Randomly choose 20 books with the same genre as those inputted? What does the algorithm do if the book inputted doesn't exist in the API that you are using?
+[q]Great idea. How are you determining these books though? This seems pretty hard to me.
+[r]I think we consider making #2 our priority because it may be a little easier you know ? idk we'll discuss haha
+[s]but it has its pros and cons
