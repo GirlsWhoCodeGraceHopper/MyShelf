@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+	<link rel='stylesheet' href='style.css'/>
+	<!--<script src='menu.js'></script>-->
+	<script src="jquery-1.11.1.min.js"></script>
+	
+
+	<title>MyShelf</title>
+</head>
+<body>
+	<!--Beginning of menu design-->
+	   <div class="menu">
+		  
+		  <!-- Menu icon -->
+		  <div class="icon-close">
+			<img src="http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/close.png">
+		  </div>
+
+		  <!-- Menu -->
+		  <ul>
+			<li><a href="BookShelf.html">Book Search</a></li>
+			<li><a href="BookRanks.html">Book Ranks</a></li>
+			<li><a href="Calendar.html">Calendar</a></li>
+			<li><a href="Forum.html">Forum</a></li>
+			<li><a href="Team.html">The Team</a></li>
+		  </ul>
+		</div>
+		<!-- Main body -->
+		<div class="jumbotron">
+		  <div class="icon-menu">
+		   <i class="fa fa-bars"></i>
+			Menu
+			</div>
+		</div>
+	<!-- end of menu design-->
+
+	
+	
+		<!--Header-->
+		<div class="Mainheader">
+			<h1>MyShelf</h1> 
+			<h2>Our Favorites and More!<h2>
+		</div>
+
+		<!-- LISTS-->
+<!-- BookBox widget BEGIN-->
+<div class="StaffFav">
+<center>
+<h3>New York Times Bestsellers August 2014</h3>
+<!-- BookBox widget BEGIN-->
+<script type="text/javascript" src="http://www.sharebookbox.com/widget2.php?id=5342"></script><a href="http://www.sharebookbox.com/index.php?id=5342"><img src="http://www.sharebookbox.com/images/bookbox2.png" style="border:0" width="139" height="18" alt="BookBox: embed book widget, share book list" /></a>
+<!-- BookBox widget END-->
+<br></br>
+<h3>Barnes and Noble's Bestsellers August 2014 </h3>
+<!-- BookBox widget BEGIN-->
+<script type="text/javascript" src="http://www.sharebookbox.com/widget2.php?id=5343"></script><a href="http://www.sharebookbox.com/index.php?id=5343"><img src="http://www.sharebookbox.com/images/bookbox2.png" style="border:0" width="139" height="18" alt="BookBox: embed book widget, share book list" /></a>
+<!-- BookBox widget END-->
+<br></br>
+<h3>Jade's Favorites</h3>
+<script type="text/javascript" src="http://www.sharebookbox.com/widget2.php?id=5340"></script><a href="http://www.sharebookbox.com/index.php?id=5340"><img src="http://www.sharebookbox.com/images/bookbox2.png" style="border:0" width="139" height="18" alt="BookBox: embed book widget, share book list" /></a>
+<br></br>
+<h3>Nana's Favorites</h3>
+<!-- BookBox widget BEGIN-->
+<script type="text/javascript" src="http://www.sharebookbox.com/widget2.php?id=5341"></script><a href="http://www.sharebookbox.com/index.php?id=5341"><img src="http://www.sharebookbox.com/images/bookbox2.png" style="border:0" width="139" height="18" alt="BookBox: embed book widget, share book list" /></a>
+<!-- BookBox widget END-->
+<br></br>
+<!-- BookBox widget END--> 		
+</center>
+</div>
+	
+	<!-- Everything below here is JavaScript-->
+	<script>console.log("whatup");
+var main= function(){
+console.log("did main work?");
+    $('.icon-menu').click(function(){
+		
+        $('.menu').animate({
+            left:"0px"
+            },200);
+        
+        $('body').animate({
+            left:"285px"
+            },200);
+        });
+   $('.icon-close').click(function(){
+       $('.menu').animate({
+           left:"-285px"
+           },200);
+           
+		$('body').animate({
+			left:"0px"
+			},200); 
+	});
+};
+
+$(document).ready(main);
+    
+    </script>
+	</body>
+</html>

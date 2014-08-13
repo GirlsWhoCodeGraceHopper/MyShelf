@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+	<link rel='stylesheet' href='style.css'/>
+	<!--<script src='menu.js'></script>-->
+	<script src="jquery-1.11.1.min.js"></script>
+	
+
+	<title>MyShelf</title>
+</head>
+<body>
+	<!--Beginning of menu design-->
+	   <div class="menu">
+		  
+		  <!-- Menu icon -->
+		  <div class="icon-close">
+			<img src="http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/close.png">
+		  </div>
+
+		  <!-- Menu -->
+		  <ul>
+			<li><a href="BookShelf.html">Book Search</a></li>
+			<li><a href="BookRanks.html">Book Ranks</a></li>
+			<li><a href="Calendar.html">Calendar</a></li>
+			<li><a href="Forum.html">Forum</a></li>
+			<li><a href="Team.html">The Team</a></li>
+		  </ul>
+		</div>
+		<!-- Main body -->
+		<div class="jumbotron">
+		  <div class="icon-menu">
+		   <i class="fa fa-bars"></i>
+			Menu
+			</div>
+		</div>
+	<!-- end of menu design-->
+
+	
+	
+		<!--Header-->
+		<div class="Mainheader">
+			<h1>MyShelf</h1> 
+			<h2>Our Staff!<h2>
+			<h3>Jade Sessions, Jacqueline Wen, Nana Appea, and Maria Javier</h3>
+			<h4> Jade Sessions</h4>
+			<p>Jade-Fill this in later </p>
+			<h4> Jacqueline Wen</h4>
+			<p>Jacqueline-Fill this in later</p>
+			<h4>Nana Appea</h4>
+			<p>Nana-Fill this in later</p>
+			<h4>Maria Javier</h4>
+			<p>Maria-Fill this in later</p>
+		</div>
+
+		<!--text boxes are made below-->
+		
+	</div>
+	
+	<!-- Everything below here is JavaScript-->
+	<script>console.log("whatup");
+var main= function(){
+console.log("did main work?");
+    $('.icon-menu').click(function(){
+		
+        $('.menu').animate({
+            left:"0px"
+            },200);
+        
+        $('body').animate({
+            left:"285px"
+            },200);
+        });
+   $('.icon-close').click(function(){
+       $('.menu').animate({
+           left:"-285px"
+           },200);
+           
+		$('body').animate({
+			left:"0px"
+			},200); 
+	});
+};
+
+$(document).ready(main);
+    
+    </script>
+	</body>
+</html>
