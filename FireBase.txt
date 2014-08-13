@@ -1,0 +1,403 @@
+
+{  
+   "books":[  
+      {  
+         "biographies":[  
+            {  
+               "title":"The Glass Castle",
+               "author":"Jeannette Walls",
+               "ISBN":"074324754X"
+            },
+            {  
+               "title":"Hard Choices",
+               "author":"Hillary Clinton",
+               "ISBN":"1476751447"
+            },
+            {  
+               "title":"Bossypants",
+               "author":"Tina Fey",
+               "ISBN":"1609419693"
+            },
+            {  
+               "title":"The Diary of a Young Girl",
+               "author":"Anne Frank",
+               "ISBN":"0553296981"
+            },
+            {  
+               "title":"John Adams",
+               "author":"David McCullough",
+               "ISBN":"0743223136"
+            },
+            {  
+               "title":"Into the Wild",
+               "author":"Jon Krakauer",
+               "ISBN":"0385486804"
+            },
+            {  
+               "title":"Unbroken: A World War II Story of Survival, Resilience, and Redemption",
+               "author":"Laura Hillenbrand",
+               "ISBN":"1400064163"
+            },
+            {  
+               "title":"Steve Jobs",
+               "author":"Walter Isaacson",
+               "ISBN":"1451648537"
+            },
+            {  
+               "title":"Cleopatra: A Life",
+               "author":"Stacy Schiff",
+               "ISBN":"0316001929"
+            }
+         ]
+      },
+      {  
+         "classics":[  
+            {  
+               "title":"1984",
+               "author":"George Orwell",
+               "ISBN":"0451524934"
+            },
+            {  
+               "title":"To Kill A Mockingbird",
+               "author":"Harper Lee",
+               "ISBN":"0061120081"
+            },
+            {  
+               "title":"Pride and Prejudice",
+               "author":"Jane Austen",
+               "ISBN":"0679783261"
+            },
+            {  
+               "title":"Lord of the Flies",
+               "author":"William Golding",
+               "ISBN":"0140283331"
+            },
+            {  
+               "title":"Fahrenheit 451",
+               "author":"Ray Bradbury",
+               "ISBN":"0345410017"
+            },
+            {  
+               "title":"Catch-22",
+               "author":"Joseph Heller",
+               "ISBN":"0684833395"
+            },
+            {  
+               "title":"Les Miserables",
+               "author":"Victor Hugo",
+               "ISBN":"0451525264"
+            },
+            {  
+               "title":"The Count of Monte Cristo",
+               "author":"Alexandre Dumas",
+               "ISBN":"0140449264"
+            },
+            {  
+               "title":"The Adventures of Tom Sawyer",
+               "author":"Mark Twain",
+               "ISBN":"0143039563"
+            },
+            {  
+               "title":"East of Eden",
+               "author":"John Steinbeck",
+               "ISBN":"0142000655"
+            },
+            {  
+               "title":"Of Mice of Men",
+               "author":"John Steinbeck",
+               "ISBN":"0142000671"
+            },
+            {  
+               "title":"Jane Eyre",
+               "author":"Charlotte Bronte",
+               "ISBN":"0142437204"
+            },
+            {  
+               "title":"The Great Gatsby",
+               "author":"F. Scott Fitzgerald",
+               "ISBN":"0743273567"
+            }
+         ]
+      },
+      {  
+         "dystopia":[  
+            {  
+               "title":"The Hunger Games",
+               "author":"Suzanne Collins",
+               "ISBN":"9780439023481"
+            },
+            {  
+               "title":"1984",
+               "author":"George Orwell",
+               "ISBN":"9780141182957"
+            },
+            {  
+               "title":"Brave New World",
+               "author":"Aldous Huxley",
+               "ISBN":"9781405880275"
+            },
+            {  
+               "title":"Divergent",
+               "author":"Veronica Roth",
+               "ISBN":"9780062095909"
+            },
+            {  
+               "title":"Uglies",
+               "author":"Scott Westerfield",
+               "ISBN":"9781847389060"
+            },
+            {  
+               "title":"Fahrenheit 451",
+               "author":"Ray Bradbury",
+               "ISBN":"9789703707034"
+            },
+            {  
+               "title":"The Host",
+               "author":"Stephenie Meyer",
+               "ISBN":"9780316218511"
+            },
+            {  
+               "title":"Animal Farm",
+               "author":"George Orwell",
+               "ISBN":"9780736692427"
+            },
+            {  
+               "title":"The Giver",
+               "author":"Lois Lowry",
+               "ISBN":"9780440228929"
+            }
+         ]
+      },
+      {  
+         "fantasy":[  
+            {  
+               "title":"The Fellowship of the Ring",
+               "author":"J.R.R. Tolkien",
+               "ISBN":"0618346252"
+            },
+            {  
+               "title":"A Game of Thrones",
+               "author":"George R.R. Martin",
+               "ISBN":"0553588486"
+            },
+            {  
+               "title":"The Name of the Wind",
+               "author":"Patrick Rothfuss",
+               "ISBN":"075640407X"
+            },
+            {  
+               "title":"Harry Potter and the Sorcerer's Stone",
+               "author":"J.K. Rowling",
+               "ISBN":"9780590353427"
+            },
+            {  
+               "title":"Stardust",
+               "author":"Neil Gaiman",
+               "ISBN":"0061142026"
+            },
+            {  
+               "title":"The Mists of Avalon",
+               "author":"Marion Zimmer Bradley",
+               "ISBN":"0345350499"
+            },
+            {  
+               "title":"The Eye of the World",
+               "author":"Robert Jordan",
+               "ISBN":"0812511816"
+            },
+            {  
+               "title":"Howl’s Moving Castle",
+               "author":"Diana Wynne Jones",
+               "ISBN":"006441034X"
+            },
+            {  
+               "title":"Hitchhiker's Guide to Galaxy",
+               "author":"Douglas Adams",
+               "ISBN":"0345391802"
+            },
+            {  
+               "title":"Ella Enchanted",
+               "author":"Gail Carson Levine",
+               "ISBN":"0590920685"
+            },
+            {  
+               "title":"The Magicians",
+               "author":"Lev Grossman",
+               "ISBN":"0670020559"
+            },
+            {  
+               "title":"The Lightning Thief",
+               "author":"Rick Riordan",
+               "ISBN":"0786838655"
+            },
+            {  
+               "title":"The Last Unicorn",
+               "author":"Peter S. Beagle",
+               "ISBN":"0451450523"
+            }
+         ]
+      },
+      {  
+         "horror":[  
+            {  
+               "title":"American Psycho",
+               "author":"Bret Easton Ellis",
+               "ISBN":"0679735771"
+            },
+            {  
+               "title":"The Amityville Horror",
+               "author":"Jay Anson",
+               "ISBN":"0553116606"
+            },
+            {  
+               "title":"And Then There Were None",
+               "author":"Agatha Christie",
+               "ISBN":"0312330871"
+            },
+            {  
+               "title":"Bag of Bones",
+               "author":"Stephen King",
+               "ISBN":"067102423X"
+            },
+            {  
+               "title":"Carie",
+               "author":"Stephen King",
+               "ISBN":"1416524304"
+            },
+            {  
+               "title":"The Cellar",
+               "author":"Richard Laymon",
+               "ISBN":"0843957484"
+            },
+            {  
+               "title":"Dracula",
+               "author":"Bram Stoker",
+               "ISBN":"0393970124"
+            },
+            {  
+               "title":"Hannibal",
+               "author":"Thomas Harris",
+               "ISBN":"0099297701"
+            },
+            {  
+               "title":"The Omen",
+               "author":"David Seltzer",
+               "ISBN":"0451219422"
+            },
+            {  
+               "title":"The Silence of the Lambs",
+               "author":"Thomas Harris",
+               "ISBN":"0099446782"
+            }
+         ]
+      },
+      {  
+         "nonfiction":[  
+            {  
+               "title":"Silent Spring",
+               "author":"Rachel Carson",
+               "ISBN":"0618249060"
+            },
+            {  
+               "title":"The Tipping Point: How Little Things Can Make A Big Difference",
+               "author":"Malcolm Gladwell",
+               "ISBN":"0316346624"
+            },
+            {  
+               "title":"I Know Why the Caged Bird Sings",
+               "author":"Maya Angelou",
+               "ISBN":"0553279378"
+            },
+            {  
+               "title":"A Short History of Nearly Everything",
+               "author":"Bill Bryson",
+               "ISBN":"076790818X"
+            },
+            {  
+               "title":"The Diary of a Young Girl",
+               "author":"Anne Frank",
+               "ISBN":"0553296981"
+            },
+            {  
+               "title":"Quiet: The Power of Introverts in a World That Can't Stop Talking",
+               "author":"Susan Cain",
+               "ISBN":"0307352145"
+            },
+            {  
+               "title":"Into the Wild",
+               "author":"Jon Krakauer",
+               "ISBN":"0385486804"
+            },
+            {  
+               "title":"The Art of War",
+               "author":"Sun Tzu",
+               "ISBN":"1590302257"
+            },
+            {  
+               "title":"Stiff: the Curious Lives of Human Cadavers",
+               "author":"Mary Roach",
+               "ISBN":"0393324826"
+            },
+            {  
+               "title":"The Selfish Gene",
+               "author":"Richard Dawkins",
+               "ISBN":"0199291152"
+            }
+         ]
+      },
+      {  
+         "romance":[  
+            {  
+               "title":"The Notebook",
+               "author":"Nicholas Sparks",
+               "ISBN":"9780446605236"
+            },
+            {  
+               "title":"Pride and Prejudice",
+               "author":"Jane Austen",
+               "ISBN":"9780147509055"
+            },
+            {  
+               "title":"Water for Elephants",
+               "author":"Sara Gruen",
+               "ISBN":"9781616200817"
+            },
+            {  
+               "title":"The Great Gatsby",
+               "author":"F. Scott Fitzgerald",
+               "ISBN":"9781597226769"
+            },
+            {  
+               "title":"Anna Karenina",
+               "author":"Leo Tolstoy",
+               "ISBN":"9780191500374"
+            },
+            {  
+               "title":"Les Miserables",
+               "author":"Victor Hugo",
+               "ISBN":"9781407017013"
+            },
+            {  
+               "title":"Tuck Everlasting",
+               "author":"Natalie Babbitt",
+               "ISBN":"9780553150056"
+            },
+            {  
+               "title":"Atonement",
+               "author":"Ian McEwan",
+               "ISBN":"9780606297738"
+            },
+            {  
+               "title":"Jane Eyre",
+               "author":"Charlotte Bronte",
+               "ISBN":"9780318656601"
+            },
+            {  
+               "title":"The Time Traveler’s Wife",
+               "author":"Audrey Niffenegger",
+               "ISBN":"9780156030007"
+            }
+         ]
+      }
+   ]
+}
