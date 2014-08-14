@@ -73,7 +73,9 @@
 			<div class="submitButton">
 				<center>
 					<br></br>
-					<button type="button">Submit!</button>
+					<form action="Gen Books.html">
+						<input type="submit" value="Get Books" id='submitButton'>
+					</form>
 				</center>
 			</div>
 		</div>
@@ -109,20 +111,23 @@
 			var buttons = $('input');
 			
 			buttons.click(function() {
-				var isHighlighted = $(this).hasClass("highlight");
-			
-				if (isHighlighted == true) {
-					numSelected = numSelected - 1;
-				} 
+				var id=this.id;
+				if (id != "submitButton") {
+					var isHighlighted = $(this).hasClass("highlight");
 				
-				if (numSelected < 3) {
-					if (isHighlighted != true) {
-						numSelected = numSelected + 1;
-					}			
+					if (isHighlighted == true) {
+						numSelected = numSelected - 1;
+					} 
 					
-					$(this).toggleClass("highlight");
-				} else {
-					alert("Please select only three categories!");
+					if (numSelected < 3) {
+						if (isHighlighted != true) {
+							numSelected = numSelected + 1;
+						}			
+						
+						$(this).toggleClass("highlight");
+					} else {
+						alert("Please select only three categories!");
+					}
 				}
 			});
 		</script>
