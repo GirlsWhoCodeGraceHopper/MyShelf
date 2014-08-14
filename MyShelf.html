@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+	<script src="https://cdn.firebase.com/js/client/1.0.19/firebase.js"></script>
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+	</head>
+	<body>
+		<div id="Results">
+			<ul id="testList">
+				
+			</ul>
+		</div>
+		<div id="ResultImages">
+			
+		</div>
+		
+		<script>
+			var BookList = new Firebase("https://burning-fire-5891.firebaseio.com/");
+			//var resultList = []; 
+			var constant = BookList.child('books');
+			var amountInList = constant.child('1/'+'/amount');
+			//retrieves amount value
+			amountInList.once('value', function(nameSnapshot) {
+				var bookAmount = nameSnapshot.val();
+				for (var i=0;i<bookAmount;i++){
+					var title = constant.child('1/classics/'+i+'/title');
+					var isbn = constant.child('1/classics/'+i+'/ISBN');
+					//var path = title.toString();
+					title.once('value', function(nameSnapshot) {
+						var displayTitle = nameSnapshot.val();
+						//resultList.push(displayTitle);
+						$('#testList').append('<li>'+ displayTitle +'</li>');
+						});
+					//var covers = isbn.toString();
+					var displayisbn;
+					isbn.once('value', function(nameSnapshot) {
+						displayisbn = nameSnapshot.val();
+						// val now contains the object { first: 'Fred', last: 'Flintstone' }.
+						//resultList.push(displayisbn);
+						$('#testList').append('<li>'+ displayisbn +'</li>');
+						$('#ResultImages').append('<img src="http://covers.openlibrary.org/b/isbn/'+ displayisbn + '-M.jpg" />');
+						});
+				
+					
+				}
+			});
+		
+			
+		</script>
+		
+	
+	</body>
+</html>
