@@ -74,7 +74,13 @@
 			<div >
 				<center>
 					<br></br>
+<<<<<<< HEAD
 					<button type="button" id="submitButton">Submit!</button>
+=======
+					<form action="Gen Books.html">
+						<input type="submit" value="Get Books" id='submitButton'>
+					</form>
+>>>>>>> origin/master
 				</center>
 			</div>
 		</div>
@@ -115,22 +121,39 @@
 			
 			// when button is clicked it gives the button the css class of being highlighted
 			buttons.click(function() {
+<<<<<<< HEAD
 				
 				var isHighlighted = $(this).hasClass("highlight");
 			
 				if (isHighlighted == true) {
 					numSelected = numSelected - 1;
 				} 
+=======
+				var id=this.id;
+				if (id != "submitButton") {
+					var isHighlighted = $(this).hasClass("highlight");
+>>>>>>> origin/master
 				
-				if (numSelected < 3) {
-					if (isHighlighted != true) {
-						numSelected = numSelected + 1;
-					}			
+					if (isHighlighted == true) {
+						numSelected = numSelected - 1;
+					} 
 					
+<<<<<<< HEAD
 					$(this).toggleClass("highlight");
 				} 
 				else {
 					alert("Please select only three categories!");
+=======
+					if (numSelected < 3) {
+						if (isHighlighted != true) {
+							numSelected = numSelected + 1;
+						}			
+						
+						$(this).toggleClass("highlight");
+					} else {
+						alert("Please select only three categories!");
+					}
+>>>>>>> origin/master
 				}
 			});
 			var basenumber,basegenre;
