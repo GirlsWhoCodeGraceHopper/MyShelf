@@ -1,5 +1,6 @@
 /* Initial body */
 body {
+
   left: 0;
   margin: 0;
   overflow: hidden;
@@ -78,7 +79,7 @@ body {
     color:#00B2B2;
 }
 .Mainheader h3 {
-	color:#FF0066
+	color:
 }
 .Questions{
     width:300px;
@@ -96,6 +97,10 @@ body {
 .Jumbotron{
     background-color:white;
 }
+button,
+button{
+background-color: black;
+}
 input,
 button {
     border-radius:40px;
@@ -107,7 +112,9 @@ button {
     background-color:#FF0066;
     border:0;
 }
- 
+ .highlight {
+    background:#5CE68A;
+  }
 .StaffFav{
 font-family:'Josefin Sans', sans-serif;
 font-weight:bold;

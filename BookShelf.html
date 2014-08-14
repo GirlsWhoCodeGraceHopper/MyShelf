@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
-	<link rel='stylesheet' href='style.css'/>
-	<!--<script src='menu.js'></script>-->
-	<script src="jquery-1.11.1.min.js"></script>
-	
+	<head>
+		<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+		<link rel='stylesheet' href='style.css'/>
+		<!--<script src='menu.js'></script>-->
+		<script src="jquery-1.11.1.min.js"></script>
+		
 
-	<title>MyShelf</title>
-</head>
-<body>
+		<title>MyShelf</title>
+	</head>
+	<body>
+		<!--<body background="http://www.designsnext.com/wp-content/uploads/2014/01/Attractive-Bookshelf-Design.jpg">-->
 	<!--Beginning of menu design-->
 	   <div class="menu">
 		  
@@ -37,65 +38,93 @@
 	<!-- end of menu design-->
 
 	<!--Homepage-->
-	<div data-role="page" id="BookSearch">
-		<!--Header-->
-		<div class="Mainheader">
-			<h1>MyShelf</h1> 
-			<h2>What are you looking for?</h2>
-		</div>
+		<div data-role="page" id="BookSearch">
+			<!--Header-->
+			<div class="Mainheader">
+				<h1>MyShelf</h1> 
+				<h2>What are you looking for?</h2>
+			</div>
 
-		<!--text boxes are made below-->
-		<div role="main" class="ui-content">
-			<center>
-				<input type="button" value="Biography" id='bioButton' data-theme="b"/>  
-				<input type="button" value="Business" id='busButton' data-theme="b"/> 
-				<input type="button" value="Classics" id='clscButton' data-theme="b"/>
-				<input type="button" value="Contemporary" id='conButton' data-theme="b"/>
-				<input type="button" value="Dystopia" id='dysButton' data-theme="b"/>
-				<input type="button" value="Fantasy" id='fansButton' data-theme="b"/>
-				<input type="button" value="History" id='hisButton' data-theme="b"/>    
-				<input type="button" value="Horror" id='horButton' data-theme="b"/>
-				<input type="button" value="Mystery/Suspense" id='mysButton' data-theme="b"/>  
-				<input type="button" value="Non-Fiction" id='nficButton' data-theme="b"/>
-				<input type="button" value="Plays" id='playButton' data-theme="b"/>     
-				<input type="button" value="Poems" id='poefiButton' data-theme="b"/>
-				<input type="button" value="Realistic Fiction" id='rficButton' data-theme="b"/>
-				<input type="button" value="Romance" id='romButton' data-theme="b"/>
-				<input type="button" value="Science" id='sciButton' data-theme="b"/>    
-				<input type="button" value="Sci Fi" id='scifiButton' data-theme="b"/>
-				<input type="button" value="Supernatural" id='snatButton' data-theme="b"/>  
-				<input type="button" value="Young Adult" id='yaButton' data-theme="b"/>
-			</center>
+			<!--text boxes are made below-->
+			<div role="main" class="ui-content">
+				<div class="genreButton">
+					<center>
+						<input type="button" value="Biography" id='bioButton' data-theme="b"/>  
+						<input type="button" value="Business" id='busButton' data-theme="b"/> 
+						<input type="button" value="Classics" id='clscButton' data-theme="b"/>
+						<input type="button" value="Contemporary" id='conButton' data-theme="b"/>
+						<input type="button" value="Dystopia" id='dysButton' data-theme="b"/>
+						<input type="button" value="Fantasy" id='fansButton' data-theme="b"/>
+						<input type="button" value="History" id='hisButton' data-theme="b"/>    
+						<input type="button" value="Horror" id='horButton' data-theme="b"/>
+						<input type="button" value="Mystery/Suspense" id='mysButton' data-theme="b"/>  
+						<input type="button" value="Non-Fiction" id='nficButton' data-theme="b"/>
+						<input type="button" value="Plays" id='playButton' data-theme="b"/>     
+						<input type="button" value="Poems" id='poefiButton' data-theme="b"/>
+						<input type="button" value="Realistic Fiction" id='rficButton' data-theme="b"/>
+						<input type="button" value="Romance" id='romButton' data-theme="b"/>
+						<input type="button" value="Science" id='sciButton' data-theme="b"/>    
+						<input type="button" value="Sci Fi" id='scifiButton' data-theme="b"/>
+						<input type="button" value="Supernatural" id='snatButton' data-theme="b"/>  
+						<input type="button" value="Young Adult" id='yaButton' data-theme="b"/>
+					</center>
+				</div>
+			</div>
+			<div class="submitButton">
+				<center>
+					<br></br>
+					<button type="button">Submit!</button>
+				</center>
+			</div>
 		</div>
-	</div>
-	
-	<!-- Everything below here is JavaScript-->
-	<script>console.log("whatup");
-var main= function(){
-console.log("did main work?");
-    $('.icon-menu').click(function(){
 		
-        $('.menu').animate({
-            left:"0px"
-            },200);
-        
-        $('body').animate({
-            left:"285px"
-            },200);
-        });
-   $('.icon-close').click(function(){
-       $('.menu').animate({
-           left:"-285px"
-           },200);
-           
-		$('body').animate({
-			left:"0px"
-			},200); 
-	});
-};
+	<!-- Everything below here is JavaScript-->
+		<script>console.log("whatup");
+			var numSelected = 0;
+			var main= function(){
+				console.log("did main work?");
+				$('.icon-menu').click(function(){
+					
+					$('.menu').animate({
+						left:"0px"
+						},200);
+					
+					$('body').animate({
+						left:"285px"
+						},200);
+					});
+			   $('.icon-close').click(function(){
+				   $('.menu').animate({
+					   left:"-285px"
+					   },200);
+					   
+					$('body').animate({
+						left:"0px"
+						},200); 
+				});
+			};
 
-$(document).ready(main);
-    
-    </script>
+			$(document).ready(main);
+			// making buttons change color
+			var buttons = $('input');
+			
+			buttons.click(function() {
+				var isHighlighted = $(this).hasClass("highlight");
+			
+				if (isHighlighted == true) {
+					numSelected = numSelected - 1;
+				} 
+				
+				if (numSelected < 3) {
+					if (isHighlighted != true) {
+						numSelected = numSelected + 1;
+					}			
+					
+					$(this).toggleClass("highlight");
+				} else {
+					alert("Please select only three categories!");
+				}
+			});
+		</script>
 	</body>
 </html>
