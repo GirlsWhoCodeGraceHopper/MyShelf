@@ -3,9 +3,17 @@
 <head>
 	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
 	<link rel='stylesheet' href='style.css'/>
-	<!--<script src='menu.js'></script>-->
+	<script src="http://listjs.com/no-cdn/list.js"></script>
 	<script src="jquery-1.11.1.min.js"></script>
-	
+	<meta charset=utf-8 />
+	<style>
+		body {
+		  font-family:cambria;
+		}
+		table td, table th {
+		  padding:15px;
+		}
+	</style>
 
 	<title>MyShelf</title>
 </head>
@@ -35,46 +43,177 @@
 			</div>
 		</div>
 	<!-- end of menu design-->
-
 	
-	
-		<!--Header-->
-		<div class="Mainheader">
-			<h1>MyShelf</h1> 
-			<h2>Schedule Your Reading Time!<h2>
-		</div>
-
-		<!--text boxes are made below-->
-		
+	<!--Header-->
+	<div class="Mainheader">
+		<h1>MyShelf</h1> 
+		<h2>Schedule Your Reading Time!<h2>
 	</div>
+	<!--text boxes are made below
+	<div align="center" style="font-family:josefin sans">	
+	Title:
+	<br><input type = 'text' id='titleIn'/> 
+	<br><br>Amount of Chapters:
+	<br><input type = 'text' id='chapterIn'/> 
+	<br><br>Number of Chapters a Day:
+	<br><input type = 'text' id='dailyIn'/> 
+	<br><br>Beginning Date:
+	<br><input type = 'text' id='beginIn'/> 
+	<br><br><br>
+	<input type="button" value="Enter Book" id='enterButton' data-theme="b"/>
+	</div>
+	<br><div align="center" style="background-color:#5CD6D6; font-family:modern; font-size:7">
 	
-	<!-- Everything below here is JavaScript-->
-	<script>console.log("whatup");
-var main= function(){
-console.log("did main work?");
-    $('.icon-menu').click(function(){
+		<ul id="bookList" style="">
+			
+		</ul>
+	</div>-->
+	
+	<!--NEWSTUFF-->
+	
+	<div id="contacts" align="center">
+			</thead>
+			<td class="title">
+			  Title:
+			  <br><input type="text" id="title-field" />
+			</td>
+			<br><br><td class="total">
+				Total Chapters:
+			  <br><input type="text" id="total-field"/>
+			</td>
+			<br><br><td class="chapter">
+				How Many Chapters A Day:
+			  <br><input type="text" id="chapter-field"/>
+			</td>
+			<br><br><td class="start">
+				Start Date:
+			  <br><input type="text" id="start-field"/>
+			</td>
+			<br><br><td class="add">
+			  <button id="add-btn">Add</button>
+			</td>
+		<br><br>
+	  <table>
+		<thead>
+		  <tr>
+			<th data-sort="name">Title</th>
+			<th data-sort="age">Total Chapters</th>
+			<th data-sort="city">Chapters a Day</th>
+			<th data-sort="new">Start Date</th>
+			<th data-sort="new">Days to Finish</th>
+			<!--<th colspan="2">
+			  <input type="text" class="search" placeholder="Search contact" />
+			</th>-->
+		  </tr>
+	
+		<tbody class="list" align="center">
+		  <tr>
+			<td class="id" style="display:none;">1</td>
+			<td class="title">Example Title</td>
+			<td class="total">20</td>
+			<td class="chapter">2</td>
+			<td class="start">January 1, 2014</td>
+			<td class="finish">10</td>
+			<td class="remove"><button class="remove-item-btn">Remove</button></td>
+		  </tr>
 		
-        $('.menu').animate({
-            left:"0px"
-            },200);
-        
-        $('body').animate({
-            left:"285px"
-            },200);
-        });
-   $('.icon-close').click(function(){
-       $('.menu').animate({
-           left:"-285px"
-           },200);
-           
-		$('body').animate({
-			left:"0px"
-			},200); 
-	});
-};
+		</tbody>
+	  </table>
+	</div>
 
-$(document).ready(main);
-    
+	<!-- Everything below here is JavaScript-->
+	<script>
+		var main= function(){
+			$('.icon-menu').click(function(){
+				
+				$('.menu').animate({
+					left:"0px"
+					},200);
+				
+				$('body').animate({
+					left:"285px"
+					},200);
+				});
+		   $('.icon-close').click(function(){
+			   $('.menu').animate({
+				   left:"-285px"
+				   },200);
+				   
+				$('body').animate({
+					left:"0px"
+					},200); 
+			});
+		};
+
+		$(document).ready(main);
+		/////////////////////////////
+		
+		$('#enterButton').click(function(){
+			var titleTask = $("#titleIn").val();
+			var chapterTask = $('#chapterIn').val();
+			var dailyTask = $('#dailyIn').val();
+			var beginTask = $('#beginIn').val();
+			var random = chapterTask/dailyTask;
+			var amtDaysDone = Math.ceil(random);
+			$('#bookList').append("<li>Title: "+titleTask+" Total Chapters: "+chapterTask+" Date to Begin: "+dailyTask
+									+" Days to Finish: "+amtDaysDone+"</li>");
+			$('#titleIn').val('');
+			$('#chapterIn').val('');
+			$('#dailyIn').val('');
+			$('#beginIn').val('');
+			
+		});
+		
+	///NEWNEWNEWNEWNEWNEW---------------------------------
+	var options = {
+	  valueNames: [ 'id', 'name', 'age', 'city' ]
+	};
+
+	// Init list
+	var contactList = new List('contacts', options);
+
+	var idField = $('#id-field'),
+		nameField = $('#title-field'),
+		ageField = $('#total-field'),
+		cityField = $('#chapter-field'),
+		startField = $('#start-field'),
+		addBtn = $('#add-btn'),
+		removeBtns = $('.remove-item-btn')
+
+	// Sets callbacks to the buttons in the list
+	refreshCallbacks();
+
+	addBtn.click(function() {
+		var total = $('#total-field').val();
+		var chapter = $('#chapter-field').val();	
+		var random = total/chapter;
+		var amtDaysDone = Math.ceil(random);
+	  contactList.add({
+		id: Math.floor(Math.random()*110000),
+		title: nameField.val(),
+		total: ageField.val(),
+		chapter: cityField.val(),
+		start: startField.val(),
+		finish: amtDaysDone
+	  });
+	  clearFields();
+	  refreshCallbacks();
+	});
+
+	function refreshCallbacks() {
+	  // Needed to add new buttons to jQuery-extended object
+	  removeBtns = $(removeBtns.selector);  
+	  removeBtns.click(function() {
+		var itemId = $(this).closest('tr').find('.id').text();
+		contactList.remove('id', itemId);
+	  });
+	}
+	function clearFields() {
+	  nameField.val('');
+	  ageField.val('');
+	  cityField.val('');
+	  startField.val('');
+	}
     </script>
 	</body>
 </html>
