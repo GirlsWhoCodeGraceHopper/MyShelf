@@ -5,6 +5,7 @@
 	<link rel='stylesheet' href='style.css'/>
 	<script src="http://listjs.com/no-cdn/list.js"></script>
 	<script src="jquery-1.11.1.min.js"></script>
+	<script src="https://cdn.firebase.com/js/client/1.0.19/firebase.js"></script>
 	<meta charset=utf-8 />
 	<style>
 		body {
@@ -123,46 +124,45 @@
 
 	<!-- Everything below here is JavaScript-->
 	<script>
-		var main= function(){
-			$('.icon-menu').click(function(){
-				
-				$('.menu').animate({
-					left:"0px"
-					},200);
-				
-				$('body').animate({
-					left:"285px"
-					},200);
-				});
-		   $('.icon-close').click(function(){
-			   $('.menu').animate({
-				   left:"-285px"
-				   },200);
-				   
-				$('body').animate({
-					left:"0px"
-					},200); 
+	var myFirebaseRef = new Firebase("https://meatloaf-kitchen.firebaseio.com/");
+	
+	var main= function(){
+		$('.icon-menu').click(function(){
+			$('.menu').animate({
+				left:"0px"
+				},200);
+			$('body').animate({
+				left:"285px"
+				},200);
 			});
-		};
-
-		$(document).ready(main);
-		/////////////////////////////
-		
-		$('#enterButton').click(function(){
-			var titleTask = $("#titleIn").val();
-			var chapterTask = $('#chapterIn').val();
-			var dailyTask = $('#dailyIn').val();
-			var beginTask = $('#beginIn').val();
-			var random = chapterTask/dailyTask;
-			var amtDaysDone = Math.ceil(random);
-			$('#bookList').append("<li>Title: "+titleTask+" Total Chapters: "+chapterTask+" Date to Begin: "+dailyTask
-									+" Days to Finish: "+amtDaysDone+"</li>");
-			$('#titleIn').val('');
-			$('#chapterIn').val('');
-			$('#dailyIn').val('');
-			$('#beginIn').val('');
-			
+	   $('.icon-close').click(function(){
+		   $('.menu').animate({
+			   left:"-285px"
+			   },200); 
+			$('body').animate({
+				left:"0px"
+				},200); 
 		});
+	};
+
+	$(document).ready(main);
+	
+		
+	/*$('#enterButton').click(function(){
+		var titleTask = $("#titleIn").val();
+		var chapterTask = $('#chapterIn').val();
+		var dailyTask = $('#dailyIn').val();
+		var beginTask = $('#beginIn').val();
+		var random = chapterTask/dailyTask;
+		var amtDaysDone = Math.ceil(random);
+		$('#bookList').append("<li>Title: "+titleTask+" Total Chapters: "+chapterTask+" Date to Begin: "+dailyTask
+								+" Days to Finish: "+amtDaysDone+"</li>");
+		$('#titleIn').val('');
+		$('#chapterIn').val('');
+		$('#dailyIn').val('');
+		$('#beginIn').val('');
+		
+	}); */
 		
 	///NEWNEWNEWNEWNEWNEW---------------------------------
 	var options = {
