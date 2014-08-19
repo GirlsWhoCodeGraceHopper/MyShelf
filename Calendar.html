@@ -6,6 +6,7 @@
 	<script src="http://listjs.com/no-cdn/list.js"></script>
 	<script src="jquery-1.11.1.min.js"></script>
 	<script src="https://cdn.firebase.com/js/client/1.0.19/firebase.js"></script>
+	<script src="jquery.table.addrow.js"></script>
 	<meta charset=utf-8 />
 	<style>
 		body {
@@ -13,6 +14,9 @@
 		}
 		table td, table th {
 		  padding:15px;
+		}
+		ul {
+			list-style-type: none;
 		}
 	</style>
 
@@ -47,19 +51,19 @@
 	
 	<!--Header-->
 	<div class="Mainheader">
-		<h1>MyShelf</h1> 
+		<h1>MyShelf</h1>
 		<h2>Schedule Your Reading Time!<h2>
 	</div>
 	<!--text boxes are made below
-	<div align="center" style="font-family:josefin sans">	
+	<div align="center" style="font-family:josefin sans">
 	Title:
-	<br><input type = 'text' id='titleIn'/> 
+	<br><input type = 'text' id='titleIn'/>
 	<br><br>Amount of Chapters:
-	<br><input type = 'text' id='chapterIn'/> 
+	<br><input type = 'text' id='chapterIn'/>
 	<br><br>Number of Chapters a Day:
-	<br><input type = 'text' id='dailyIn'/> 
+	<br><input type = 'text' id='dailyIn'/>
 	<br><br>Beginning Date:
-	<br><input type = 'text' id='beginIn'/> 
+	<br><input type = 'text' id='beginIn'/>
 	<br><br><br>
 	<input type="button" value="Enter Book" id='enterButton' data-theme="b"/>
 	</div>
@@ -68,7 +72,7 @@
 		<ul id="bookList" style="">
 			
 		</ul>
-	</div>-->
+	</div>
 	
 	<!--NEWSTUFF-->
 	
@@ -91,7 +95,7 @@
 			  <br><input type="text" id="start-field"/>
 			</td>
 			<br><br><td class="add">
-			  <button id="add-btn">Add</button>
+			  <input type="button" id="add-btn" value="Add"</button>
 			</td>
 		<br><br>
 	  <table>
@@ -102,21 +106,19 @@
 			<th data-sort="city">Chapters a Day</th>
 			<th data-sort="new">Start Date</th>
 			<th data-sort="new">Days to Finish</th>
-			<!--<th colspan="2">
-			  <input type="text" class="search" placeholder="Search contact" />
-			</th>-->
+			
 		  </tr>
-	
-		<tbody class="list" align="center">
-		  <tr>
+
+		<tbody align="center" id="schedule">
+		 <!--<tr>
 			<td class="id" style="display:none;">1</td>
-			<td class="title">Example Title</td>
-			<td class="total">20</td>
-			<td class="chapter">2</td>
-			<td class="start">January 1, 2014</td>
-			<td class="finish">10</td>
-			<td class="remove"><button class="remove-item-btn">Remove</button></td>
-		  </tr>
+			<td class="title"><ul><li>Example Title</li></ul></td>
+			<td class="total"><ul><li>20</li><ul></td>
+			<td class="chapter"><ul><li>2</li></ul></td>
+			<td class="start"><ul><li>January 1, 2014</li></ul></td>
+			<td class="finish"><ul><li>10</li></ul></td>
+			<td class="remove"><ul><li><button class="remove-item-btn">Remove</button></li></ul></td>
+		  </tr> -->
 		
 		</tbody>
 	  </table>
@@ -124,95 +126,82 @@
 
 	<!-- Everything below here is JavaScript-->
 	<script>
-	var myFirebaseRef = new Firebase("https://meatloaf-kitchen.firebaseio.com/");
+	//$(document).ready(main);
+	var schedBase = new Firebase("https://meatloaf-kitchen.firebaseio.com/");
 	
 	var main= function(){
-		$('.icon-menu').click(function(){
-			$('.menu').animate({
-				left:"0px"
-				},200);
-			$('body').animate({
-				left:"285px"
-				},200);
-			});
-	   $('.icon-close').click(function(){
-		   $('.menu').animate({
-			   left:"-285px"
-			   },200); 
-			$('body').animate({
-				left:"0px"
-				},200); 
-		});
-	};
+				
+				$('.icon-menu').click(function(){
+		
+        $('.menu').animate({
+            left:"0px"
+            },200);
+        
+        $('content').animate({
+            left:"200px"
+            },200);
+        });
+   $('.icon-close').click(function(){
+       $('.menu').animate({
+           left:"-285px"
+           },200);
+           
+		$('body').animate({
+			left:"0px"
+			},200);
+	});
+};
 
-	$(document).ready(main);
+			$(document).ready(main);
+
 	
+	schedBase.on('child_added', function(dataSnapshot, prevChildName) {
+			var startSnap = dataSnapshot.child('start');
+			var chapterSnap = dataSnapshot.child('chapter');
+			var titleSnap = dataSnapshot.child('title');
+			var finishSnap = dataSnapshot.child('finish');
+			var totalSnap = dataSnapshot.child('total');
+			var start = startSnap.val();
+			var chapter = chapterSnap.val();
+			var title = titleSnap.val();
+			var finish = finishSnap.val();
+			var total = totalSnap.val();
+			$('#schedule').append(
+				"<tr id="+title+"><td style='display:none;'>1</td><td>"+title+"</td><td>"+total+"</td><td>"+chapter+"<td class='start'>"+start+"</td></td><td>"+finish+"</td>");
 		
-	/*$('#enterButton').click(function(){
-		var titleTask = $("#titleIn").val();
-		var chapterTask = $('#chapterIn').val();
-		var dailyTask = $('#dailyIn').val();
-		var beginTask = $('#beginIn').val();
-		var random = chapterTask/dailyTask;
-		var amtDaysDone = Math.ceil(random);
-		$('#bookList').append("<li>Title: "+titleTask+" Total Chapters: "+chapterTask+" Date to Begin: "+dailyTask
-								+" Days to Finish: "+amtDaysDone+"</li>");
-		$('#titleIn').val('');
-		$('#chapterIn').val('');
-		$('#dailyIn').val('');
-		$('#beginIn').val('');
+			$('#'+title).append("<td><input type='button' class='delRow' value='Remove'></td></tr>").click(function(){
+				$(this).closest("tr").remove();
+			});
+
+		});
 		
-	}); */
 		
-	///NEWNEWNEWNEWNEWNEW---------------------------------
-	var options = {
-	  valueNames: [ 'id', 'name', 'age', 'city' ]
-	};
+	
+	var addBtn = $('#add-btn');
+	//var remove = $('#removeButton');
 
-	// Init list
-	var contactList = new List('contacts', options);
-
-	var idField = $('#id-field'),
-		nameField = $('#title-field'),
-		ageField = $('#total-field'),
-		cityField = $('#chapter-field'),
-		startField = $('#start-field'),
-		addBtn = $('#add-btn'),
-		removeBtns = $('.remove-item-btn')
-
-	// Sets callbacks to the buttons in the list
-	refreshCallbacks();
+	$('#removeButton').click(function(){
+		console.log("got remove");
+		alert("hi");
+	});
 
 	addBtn.click(function() {
 		var total = $('#total-field').val();
-		var chapter = $('#chapter-field').val();	
+		var chapter = $('#chapter-field').val();
+		var title = $('#title-field').val();
+		var start = $('#start-field').val();
 		var random = total/chapter;
 		var amtDaysDone = Math.ceil(random);
-	  contactList.add({
-		id: Math.floor(Math.random()*110000),
-		title: nameField.val(),
-		total: ageField.val(),
-		chapter: cityField.val(),
-		start: startField.val(),
-		finish: amtDaysDone
-	  });
-	  clearFields();
-	  refreshCallbacks();
+		schedBase.push({ 'title': title, 'total': total, 'chapter': chapter, 'start': start, 'finish': amtDaysDone });
+		location.reload();
+		clearFields();
 	});
-
-	function refreshCallbacks() {
-	  // Needed to add new buttons to jQuery-extended object
-	  removeBtns = $(removeBtns.selector);  
-	  removeBtns.click(function() {
-		var itemId = $(this).closest('tr').find('.id').text();
-		contactList.remove('id', itemId);
-	  });
-	}
+	
 	function clearFields() {
-	  nameField.val('');
-	  ageField.val('');
-	  cityField.val('');
-	  startField.val('');
+		$('#total-field').val('');
+		$('#chapter-field').val('');
+		$('#title-field').val('');
+		$('#start-field').val('');
 	}
     </script>
 	</body>

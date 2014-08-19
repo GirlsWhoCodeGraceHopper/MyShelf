@@ -3,7 +3,6 @@ body {
 
   left: 0;
   margin: 0;
-  overflow: hidden;
   position: relative;
 }
 
@@ -11,8 +10,8 @@ body {
 .menu {
   background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;
   left: -285px;  /* start off behind the scenes */
-  height: 100%;
-  position: fixed;
+  height: 500%;
+  position: absolute;
   width: 285px;
 }
 
@@ -28,7 +27,7 @@ body {
 .menu li {
   border-bottom: 1px solid #636366;
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: bold; 
+  font-weight: bold;
   line-height: 45px;
   padding-bottom: 3px;
   padding-left: 20px;
@@ -52,7 +51,7 @@ body {
   color: #000;
   cursor: pointer;
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: 700; 
+  font-weight: 700;
   font-size: 16px;
   padding-bottom: 25px;
   padding-left: 25px;
@@ -101,12 +100,11 @@ button,
 button{
 background-color: black;
 }
-input,
-button {
+input{
     border-radius:40px;
     border-radius:40px/24px;
     font-family: 'Josefin Sans', sans-serif;
-    font-weight: 500; 
+    font-weight: 500;
     font-size:18px;
     color:white;
     background-color:#FF0066;
@@ -119,4 +117,103 @@ button {
 font-family:'Josefin Sans', sans-serif;
 font-weight:bold;
 color:black
+}
+.bookstyle{
+	font-weight: bold;
+}
+
+ul{
+list-style-type: none;
+}
+
+.Jadeimage{
+	width: 160px;
+	height: 160px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	background: url(rsz_10007234_10202400690114449_4666288531857365373_n.jpg) no-repeat;
+}
+
+.Jackieimage{
+	width: 160px;
+	height: 160px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	background: url(rsz_601425_10151494339404301_272153985_n.jpg) no-repeat;
+}
+
+.Nanaimage{
+	width: 160px;
+	height: 160px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	background: url(http://i.picresize.com/images/2014/08/15/W6bYw.jpg) no-repeat;
+}
+
+.Mariaimage{
+	width: 160px;
+	height: 160px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	background: url(http://i.picresize.com/images/2014/08/15/bguG.jpg) no-repeat;
+}
+h4{
+font-family: 'Josefin Sans', sans-serif;
+    color:black;
+    text-align:center;
+}
+a{
+font-family: 'Josefin Sans', sans-serif;
+    font-weight:bold;
+	color:black;
+    text-align:center;
+    
+}
+.bgimg{
+opacity: 0.4;
+filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+.chatbox  input {
+ border-radius:40px;
+    border-radius:40px/24px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 500;
+    font-size:18px;
+	color: black;
+	
+}
+.actionButtons input{
+border-radius:40px;
+    border-radius:40px/24px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 500;
+    font-size:18px;
+	color:white;
+	border:0;
+}
+.schedButton input{
+border-radius:40px;
+    border-radius:40px/24px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 500;
+    font-size:18px;
+    color:white;
+    background-color:#FF0066;
+    border:0;
+}
+
+button{
+  border-radius:40px;
+    border-radius:40px/24px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 500;
+    font-size:18px;
+    color:white;
+    border:0;
+    width:80px;
+    height:20px;
 }

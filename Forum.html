@@ -5,6 +5,9 @@
 	<link rel='stylesheet' href='style.css'/>
 	<!--<script src='menu.js'></script>-->
 	<script src="jquery-1.11.1.min.js"></script>
+	<script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+
 	
 
 	<title>MyShelf</title>
@@ -22,7 +25,7 @@
 		  <ul>
 			<li><a href="BookShelf.html">Book Search</a></li>
 			<li><a href="BookRanks.html">Book Ranks</a></li>
-			<li><a href="Calendar.html">Calendar</a></li>
+			<li><a href="Calendar.html">Schedule</a></li>
 			<li><a href="Forum.html">Forum</a></li>
 			<li><a href="Team.html">The Team</a></li>
 		  </ul>
@@ -43,10 +46,33 @@
 			<h1>MyShelf</h1> 
 			<h2>See what others have to say!<h2>
 		</div>
-
+	<center>
 		<!--text boxes are made below-->
-		
+		<div class = "chatbox">
+		<div id='messagesDiv'></div>
+    <input type='text' id='nameInput' placeholder='       Your Name' style="background-color:#FFFF85 " style="color:black">
+    <input type='text' id='messageInput' placeholder='        Message' style="background-color:#FFFF85 ">
 	</div>
+	</center>
+    <script>
+      var myDataRef = new Firebase('https://myshelfforum.firebaseio.com/');
+      $('#messageInput').keypress(function (e) {
+        if (e.keyCode == 13) {
+          var name = $('#nameInput').val();
+          var text = $('#messageInput').val();
+          myDataRef.push({name: name, text: text});
+          $('#messageInput').val('');
+        }
+      });
+      myDataRef.on('child_added', function(snapshot) {
+        var message = snapshot.val();
+        displayChatMessage(message.name, message.text);
+      });
+      function displayChatMessage(name, text) {
+        $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
+        $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+      };
+    </script>
 	
 	<!-- Everything below here is JavaScript-->
 	<script>console.log("whatup");
@@ -58,8 +84,8 @@ console.log("did main work?");
             left:"0px"
             },200);
         
-        $('body').animate({
-            left:"285px"
+        $('content').animate({
+            left:"200px"
             },200);
         });
    $('.icon-close').click(function(){
@@ -72,7 +98,6 @@ console.log("did main work?");
 			},200); 
 	});
 };
-
 $(document).ready(main);
     
     </script>

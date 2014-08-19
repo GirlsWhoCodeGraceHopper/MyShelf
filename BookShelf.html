@@ -10,6 +10,9 @@
 
 		<title>MyShelf</title>
 	</head>
+	
+	<a name="backtotop">
+	
 	<body>
 		<!--<body background="http://www.designsnext.com/wp-content/uploads/2014/01/Attractive-Bookshelf-Design.jpg">-->
 	<!--Beginning of menu design-->
@@ -24,7 +27,7 @@
 		  <ul>
 			<li><a href="BookShelf.html">Book Search</a></li>
 			<li><a href="BookRanks.html">Book Ranks</a></li>
-			<li><a href="Calendar.html">Calendar</a></li>
+			<li><a href="Calendar.html">Schedule</a></li>
 			<li><a href="Forum.html">Forum</a></li>
 			<li><a href="Team.html">The Team</a></li>
 		  </ul>
@@ -42,31 +45,32 @@
 		<div data-role="page" id="BookSearch">
 			<!--Header-->
 			<div class="Mainheader">
-				<h1>MyShelf</h1> 
+				<h1>MyShelf</h1>
 				<h2>What are you looking for?</h2>
 			</div>
-
 			<!--text boxes are made below-->
 			<div role="main" class="ui-content">
 				<div class="genreButton">
 					<center>
-						<input type="button" value="Biography" id='bioButton' data-theme="b"/>  
-						<input type="button" value="Business" id='busButton' data-theme="b"/> 
+						<input type="button" value="Biography" id='bioButton' data-theme="b"/>
+						<input type="button" value="Business" id='busButton' data-theme="b"/>
 						<input type="button" value="Classics" id='clscButton' data-theme="b"/>
 						<input type="button" value="Contemporary" id='conButton' data-theme="b"/>
 						<input type="button" value="Dystopia" id='dysButton' data-theme="b"/>
 						<input type="button" value="Fantasy" id='fansButton' data-theme="b"/>
-						<input type="button" value="History" id='hisButton' data-theme="b"/>    
+						<input type="button" value="History" id='hisButton' data-theme="b"/>
+						<input type="button" value="Historical Fiction" id='histfButton' data-theme="b"/>
 						<input type="button" value="Horror" id='horButton' data-theme="b"/>
-						<input type="button" value="Mystery/Suspense" id='mysButton' data-theme="b"/>  
+						<input type="button" value="Mystery/Suspense" id='mysButton' data-theme="b"/>
 						<input type="button" value="Non-Fiction" id='nficButton' data-theme="b"/>
-						<input type="button" value="Plays" id='playButton' data-theme="b"/>     
+						<input type="button" value="Plays" id='playButton' data-theme="b"/>
 						<input type="button" value="Poems" id='poefiButton' data-theme="b"/>
 						<input type="button" value="Realistic Fiction" id='rficButton' data-theme="b"/>
+						<input type="button" value="Religious" id='relButton' data-theme="b"/>
 						<input type="button" value="Romance" id='romButton' data-theme="b"/>
-						<input type="button" value="Science" id='sciButton' data-theme="b"/>    
+						<input type="button" value="Science" id='sciButton' data-theme="b"/>
 						<input type="button" value="Sci Fi" id='scifiButton' data-theme="b"/>
-						<input type="button" value="Supernatural" id='snatButton' data-theme="b"/>  
+						<input type="button" value="Supernatural" id='snatButton' data-theme="b"/>
 						<input type="button" value="Young Adult" id='yaButton' data-theme="b"/>
 					</center>
 				</div>
@@ -74,19 +78,32 @@
 			<div >
 				<center>
 					<br></br>
-
-					<button type="button" id="submitButton">Submit!</button>
-
-					<form action="Gen Books.html">
-						<input type="submit" value="Get Books" id='submitButton'>
-					</form>
-			</center>
+						<div class="actionButtons">
+						<input type="submit" value="Get Books" id='submitButton' style = "background-color:#5AB591 ">
+						
+<form><button type="button" value="Clear Books" onClick="window.location.reload()" style="background-color:#70E2B5">Clear</form>
+						</div>
+				</center>
 			</div>
 		</div>
-		<div style="font-family:cambria">
-			<ul id="resultList" 		
-			</ul>
+		
+		<div class = "bookstyle">
+			<div style="font-family:Josefin Sans">
+				<center>
+					<ul id="resultList">
+					</ul>
+					<A HREF="#backtotop">Back To Top</A>
+				</center>
+			</div>
 		</div>
+		
+		<table style="width:300px">
+			<tr>
+			  <td><ul "#resultList"></ul></td>
+			  
+			</tr>
+		</table>
+		
 	<!-- Everything below here is JavaScript-->
 		<script>
 		
@@ -94,64 +111,50 @@
 			var main= function(){
 				
 				$('.icon-menu').click(function(){
-					
-					$('.menu').animate({
-						left:"0px"
-						},200);
-					
-					$('body').animate({
-						left:"285px"
-						},200);
-					});
-			   $('.icon-close').click(function(){
-				   $('.menu').animate({
-					   left:"-285px"
-					   },200);
-					   
-					$('body').animate({
-						left:"0px"
-						},200); 
-				});
-			};
+		
+        $('.menu').animate({
+            left:"0px"
+            },200);
+        
+        $('content').animate({
+            left:"200px"
+            },200);
+        });
+   $('.icon-close').click(function(){
+       $('.menu').animate({
+           left:"-285px"
+           },200);
+           
+		$('body').animate({
+			left:"0px"
+			},200);
+	});
+};
 
 			$(document).ready(main);
 			// making buttons change color
 			var buttons = $('input');
 			
-			// when button is clicked it gives the button the css class of being highlighted
 			buttons.click(function() {
-				
-				var isHighlighted = $(this).hasClass("highlight");
-			
-				if (isHighlighted == true) {
-					numSelected = numSelected - 1;
-				} 
-
 				var id=this.id;
 				if (id != "submitButton") {
-					var isHighlighted = $(this).hasClass("highlight");
-
-				
-					if (isHighlighted == true) {
-						numSelected = numSelected - 1;
-					} 
+					if (id != "clearResults") {
+						var isHighlighted = $(this).hasClass("highlight");
 					
-
-					$(this).toggleClass("highlight");
-				} 
-				else {
-					alert("Please select only three categories!");
-
-					if (numSelected < 3) {
-						if (isHighlighted != true) {
-							numSelected = numSelected + 1;
-						}			
+						if (isHighlighted == true) {
+							numSelected = numSelected - 1;
+						}
 						
-						$(this).toggleClass("highlight");
-					} else {
-						alert("Please select only three categories!");
+						if (numSelected < 3) {
+							if (isHighlighted != true) {
+								numSelected = numSelected + 1;
+							}
+							
+							$(this).toggleClass("highlight");
+						} else {
+							alert("Please select only three categories!");
+						}
 					}
->>>>>>> origin/master
 				}
 			});
 			var basenumber,basegenre;
@@ -194,10 +197,10 @@
 				basegenre = "realistic fiction";
 			}
 
-			/*document.getElementById('').onclick = function() {
+			document.getElementById('relButton').onclick = function() {
 			basenumber = 9;
 			basegenre = "religious";
-			}*/
+			}
 
 			document.getElementById('romButton').onclick = function() {
 			basenumber = 10;
@@ -223,11 +226,26 @@
 			basenumber = 15;
 			basegenre = "young adult";
 			}
-
+			document.getElementById('busButton').onclick = function() {
+			basenumber = 16;
+			basegenre = "business";
+			}
+			document.getElementById('conButton').onclick = function() {
+			basenumber = 17;
+			basegenre = "Contemporary";
+			}
+			document.getElementById('poefiButton').onclick = function() {
+			basenumber = 18;
+			basegenre = "poems";
+			}
+			document.getElementById('histfButton').onclick = function() {
+			basenumber = 19;
+			basegenre = "historicalfiction";
+			}
 			$("#submitButton").click(function(){
 				// creates new Firebase
 				var BookList = new Firebase("https://burning-fire-5891.firebaseio.com/");
-				//var resultList = []; 
+				//var resultList = [];
 				//constant creates link to 'books' object
 				var constant = BookList.child('books');
 				//leads to the amount in the genre
@@ -241,23 +259,29 @@
 						var isbn = constant.child(basenumber+'/'+basegenre+'/'+i+'/ISBN');
 						var author = constant.child(basenumber+'/'+basegenre+'/'+i+'/author');
 						
-						//var path = title.toString();
-						title.once('value', function(nameSnapshot) {
-							var displayTitle = nameSnapshot.val();
-							//resultList.push(displayTitle);
-							$('#resultList').append('<li>'+ displayTitle +'</li>');
-							});
-						author.once('value', function(nameSnapshot) {
-							var displayauthor = nameSnapshot.val();
-							$('#resultList').append(displayauthor);
-							});	
+						
 						//var covers = isbn.toString();
 						isbn.once('value', function(nameSnapshot) {
 							var displayisbn = nameSnapshot.val();
 							//resultList.push(displayisbn);
-							//$('#testList').append('<li>'+ displayisbn +'</li>');
-							$('#resultList').append('<br><img src="http://covers.openlibrary.org/b/isbn/'+ displayisbn + '-M.jpg" />');
+							//$('#testList').prepend('<li>'+ displayisbn +'</li>');
+							$('#resultList').prepend('<br><img src="http://covers.openlibrary.org/b/isbn/'+ displayisbn + '-M.jpg" />');
 							});
+						
+						
+						author.once('value', function(nameSnapshot) {
+							var displayauthor = nameSnapshot.val();
+							$('#resultList').prepend(displayauthor);
+							});
+							
+						//var path = title.toString();
+						title.once('value', function(nameSnapshot) {
+							var displayTitle = nameSnapshot.val();
+							//resultList.push(displayTitle);
+							$('#resultList').prepend('<li>'+ displayTitle +'</li>');
+							});
+							
+						
 					}
 				});
 		});

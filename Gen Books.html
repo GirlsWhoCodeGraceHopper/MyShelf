@@ -5,6 +5,8 @@
 	<link rel='stylesheet' href='style.css'/>
 	<!--<script src='menu.js'></script>-->
 	<script src="jquery-1.11.1.min.js"></script>
+	<script src="https://cdn.firebase.com/js/client/1.0.19/firebase.js"></script>
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
 	
 
 	<title>MyShelf</title>
@@ -45,13 +47,19 @@
 		</div>
 
 		<!--text boxes are made below-->
-		
-	</div>
+		<div>
+			<ul id="resultList">
+				
+			</ul>
+		</div>
+	
 	
 	<!-- Everything below here is JavaScript-->
-	<script>console.log("whatup");
-var main= function(){
-console.log("did main work?");
+	<script>
+
+	console.log("whatup");
+	var main= function(){
+	console.log("did main work?");
     $('.icon-menu').click(function(){
 		
         $('.menu').animate({
@@ -74,7 +82,50 @@ console.log("did main work?");
 };
 
 $(document).ready(main);
-    
+
+window.onload = function () {
+			
+			//$("#submitButton").click(function(){
+				console.log("hi");
+				// creates new Firebase
+				var BookList = new Firebase("https://burning-fire-5891.firebaseio.com/");
+				//var resultList = []; 
+				//constant creates link to 'books' object
+				var constant = BookList.child('books');
+				//leads to the amount in the genre
+				var amountInList = constant.child(basenumber+'/'+'/amount');
+				amountInList.once('value', function(nameSnapshot) {
+					// declares value of book amount based on the link
+					var bookAmount = nameSnapshot.val();
+					for (var i=0;i<bookAmount;i++){
+						// adds on to link to lead to title, isbn, and author
+						var title = constant.child(basenumber+"/"+basegenre+"/"+i+'/title');
+						var isbn = constant.child(basenumber+'/'+basegenre+'/'+i+'/ISBN');
+						var author = constant.child(basenumber+'/'+basegenre+'/'+i+'/author');
+						
+						//var path = title.toString();
+						title.once('value', function(nameSnapshot) {
+							var displayTitle = nameSnapshot.val();
+							//resultList.push(displayTitle);
+							$('#resultList').append('<li>'+ displayTitle +'</li>');
+							});
+						author.once('value', function(nameSnapshot) {
+							var displayauthor = nameSnapshot.val();
+							$('#resultList').append(displayauthor);
+							});	
+						//var covers = isbn.toString();
+						isbn.once('value', function(nameSnapshot) {
+							var displayisbn = nameSnapshot.val();
+							//resultList.push(displayisbn);
+							//$('#testList').append('<li>'+ displayisbn +'</li>');
+							$('#resultList').append('<br><img src="http://covers.openlibrary.org/b/isbn/'+ displayisbn + '-M.jpg" />');
+							});
+					}
+				});
+		//});
+	
+};
+   
     </script>
 	</body>
 </html>
