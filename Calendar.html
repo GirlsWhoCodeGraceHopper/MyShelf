@@ -167,9 +167,9 @@
 			var finish = finishSnap.val();
 			var total = totalSnap.val();
 			$('#schedule').append(
-				"<tr id="+title+"><td style='display:none;'>1</td><td>"+title+"</td><td>"+total+"</td><td>"+chapter+"<td class='start'>"+start+"</td></td><td>"+finish+"</td>");
+				"<tr id="+total+"><td style='display:none;'>1</td><td>"+title+"</td><td>"+total+"</td><td>"+chapter+"<td class='start'>"+start+"</td></td><td>"+finish+"</td>");
 		
-			$('#'+title).append("<td><input type='button' class='delRow' value='Remove'></td></tr>").click(function(){
+			$('#'+total).append("<td><input type='button' class='delRow' value='Remove'></td></tr>").click(function(){
 				$(this).closest("tr").remove();
 			});
 
@@ -180,10 +180,10 @@
 	var addBtn = $('#add-btn');
 	//var remove = $('#removeButton');
 
-	$('#removeButton').click(function(){
-		console.log("got remove");
-		alert("hi");
-	});
+	//$('#removeButton').click(function(){
+	//	console.log("got remove");
+	//	alert("hi");
+	//});
 
 	addBtn.click(function() {
 		var total = $('#total-field').val();
